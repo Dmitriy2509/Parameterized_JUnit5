@@ -44,7 +44,7 @@ public class ParameterizedTestWithJunit5 {
             "Ann",
             "Kate"
     })
-    @ParameterizedTest(name = "Registration test with ValueSourse: {0}")
+    @ParameterizedTest(name = "Registration test with ValueSource: {0}")
     public void registrationWithPageObjectTestAndValueSource(String name) {
         registrationPage
                 .openPage()
@@ -72,7 +72,7 @@ public class ParameterizedTestWithJunit5 {
             "Ann, Rem",
             "Kate, Mercedes"
     })
-    @ParameterizedTest(name = "Registration test with CsvSourse: {1}")
+    @ParameterizedTest(name = "Registration test with CsvSource: {1}")
     public void registrationWithPageObjectTestAndCsvCourse(String name, String surname) {
         registrationPage
                 .openPage()
@@ -95,7 +95,7 @@ public class ParameterizedTestWithJunit5 {
     }
 
     @EnumSource(Gender.class)
-    @ParameterizedTest(name = "Registration test with EnumSourse")
+    @ParameterizedTest(name = "Registration test with EnumSource")
     public void registrationWithPageObjectTestAndEnum(Gender gender) {
         registrationPage
                 .openPage()
@@ -118,7 +118,7 @@ public class ParameterizedTestWithJunit5 {
     }
 
     @EnumSource(Hobbies.class)
-    @ParameterizedTest(name = "Registration test with EnumSourse (Hobbies)")
+    @ParameterizedTest(name = "Registration test with EnumSource (Hobbies)")
     public void registrationWithPageObjectTestAndEnumHobbies(Hobbies hobby) {
         registrationPage
                 .openPage()
@@ -139,7 +139,7 @@ public class ParameterizedTestWithJunit5 {
                 .checkSubmitFormIsDisplayed(testDataFaker.firstName)
                 .checkSubmitFormIsDisplayed(testDataFaker.lastName);
     }
-
+    // The method with parameters has the same name as the test method has
     static Stream<Arguments> registrationWithPageObjectTestAndMethodSource() {
         return Stream.of(
                 Arguments.of(
@@ -173,7 +173,7 @@ public class ParameterizedTestWithJunit5 {
                 .checkSubmitFormIsDisplayed(testDataFaker.firstName)
                 .checkSubmitFormIsDisplayed(testDataFaker.lastName);
     }
-
+    //ParameterizedTest with three options
     static Stream<Arguments> registrationMethodSource() {
         return Stream.of(
                 Arguments.of(
